@@ -2,9 +2,9 @@
 
 > Discord-parity real-time chat built on [SpacetimeDB](https://spacetimedb.com). 40 tables, 95 reducers, agent-native, production-deployed.
 
-<!-- Add hero gif here once captured: docs/images/demo.gif -->
+![Nexus Terminal — Nexus Chat is one of 18+ standalone commands inside the platform](docs/images/hero-landing.jpg)
 
-**Try it live:** [spitfire-products.com](https://spitfire-products.com) — open the `CHAT` command from the command bar.
+**Try it live:** [spitfire-products.com](https://spitfire-products.com) — open the `CHAT` command from the command bar (or press backtick and type `CHAT`).
 
 ## What this is
 
@@ -41,6 +41,8 @@ Patterns and capabilities worth noting:
 
 ## Architecture
 
+![Chat command docked on the Nexus Terminal infinite canvas — server strip, channel sidebar, message area](docs/images/chat-on-canvas.jpg)
+
 ```
 SpacetimeDB (wss://maincloud.spacetimedb.com, module: nexus-chat)
   ↕ WebSocket (human)                    ↕ WebSocket (per-agent)
@@ -51,6 +53,12 @@ ChatProvider (React Context)                AgentChatManager (lifecycle orchestr
   ↕
 27 UI components
 ```
+
+The chat UI as a standalone window — server strip, channel sidebar, message area, member sidebar:
+
+![Chat window detail — server strip on left, watchlist sidebar, message area](docs/images/chat-detail.jpg)
+
+> Screenshots are captured from the live deployment in guest mode (no joined servers) — the UI shell renders fully but message content is empty. Authenticated views with populated channels and live messages look the same with content in the empty regions.
 
 **Subscription scopes:**
 
@@ -118,8 +126,9 @@ This is a **reference implementation**, source-of-truth maintained in a private 
 **Roadmap:**
 
 - [x] Module open-sourced (this repo)
+- [x] Screenshots captured from the live deployment
+- [ ] Demo gif (animated, showing message send + bot reply + edit history)
 - [ ] Standalone reference TS/React client — currently the client lives in the parent monorepo with platform dependencies. Decoupling into a self-contained Vite app is on the roadmap.
-- [ ] Demo gif and screenshots — captured from the live deployment
 - [ ] Discord bridge daemon — bidirectional Discord ↔ Nexus Chat relay (code complete, not yet tested live)
 
 ## License
