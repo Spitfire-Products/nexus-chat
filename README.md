@@ -41,7 +41,9 @@ Patterns and capabilities worth noting:
 
 ## Architecture
 
-![Chat command docked on the Nexus Terminal infinite canvas — server strip, channel sidebar, message area](docs/images/chat-on-canvas.jpg)
+![Chat in production — Nexus Terminal server, #general channel, mixed human and bot messages including a @cortex mention](docs/images/chat-live.jpg)
+
+The shot above is from the live deployment with a populated server: the left strip shows the server list (current server highlighted in green), the channel sidebar groups channels by category (CHANNELS / TEXT CHANNELS / PLATFORM HELP / DIRECT MESSAGES), the message area renders mixed content (text, GIFs, edited messages, bot replies with the `BOT` badge), and the composer supports Normal / Schedule / Ephemeral message modes plus attachments and emoji.
 
 ```
 SpacetimeDB (wss://maincloud.spacetimedb.com, module: nexus-chat)
@@ -53,12 +55,6 @@ ChatProvider (React Context)                AgentChatManager (lifecycle orchestr
   ↕
 27 UI components
 ```
-
-The chat UI as a standalone window — server strip, channel sidebar, message area, member sidebar:
-
-![Chat window detail — server strip on left, watchlist sidebar, message area](docs/images/chat-detail.jpg)
-
-> Screenshots are captured from the live deployment in guest mode (no joined servers) — the UI shell renders fully but message content is empty. Authenticated views with populated channels and live messages look the same with content in the empty regions.
 
 **Subscription scopes:**
 
