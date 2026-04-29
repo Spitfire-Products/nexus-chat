@@ -1,0 +1,14 @@
+# Rust build artifacts
+target/
+**/target/
+Cargo.lock
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
+
+# Generated bindings (committed in monorepo, regenerated on consumer side)
+generated/
